@@ -5,8 +5,13 @@ const cors = require("cors");
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+    origin: "*",
+    methods: "GET,POST",
+    allowedHeaders: ["Content-Type"],
+    credentials: true
+  }));
+  app.use(express.json());
 
 app.post("/generate", async (req, res) => {
     const { url } = req.body;

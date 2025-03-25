@@ -12,7 +12,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/generate", { url });
+      const response = await axios.post("https://qr-code-backend-blond.vercel.app/generate", { url });
       setQrCode(response.data.qrCode);
     } catch (error) {
       console.error("Error generating QR Code", error);
